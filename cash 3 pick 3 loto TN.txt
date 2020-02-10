@@ -1,0 +1,210 @@
+//  main.cpp
+//  Shevan LotteryWinningPredictions
+//  Created by Dev Gears on 2/9/20.
+//  Copyright © 2020 Dev Gears. All rights reserved.
+
+
+#include <iostream>
+int onetwoten [3][3];
+int winningnumber1 =0;
+int temp = 0;
+int winningnumber2 =0;
+int winningnumber3 =0;
+int reverse = 0;
+char yesorNO;
+int tryThis;
+
+//int reversenumbers [] =  {4,5,6,7,8,9,0,1,2,3};
+//int reversenumbers2[] =  {1,2,3,4,5,6,7,8,9,0};
+
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    // present the 3 winning numbers
+    
+    std::cout << " ***************************************** ";
+    std::cout << std::endl;
+    
+    while(temp == 0)
+    {
+    std::cout << "Enter first number" << std::endl;
+    std::cin>> winningnumber1;
+    std::cout << "Enter first number" << std::endl;
+    std::cin>> winningnumber2;
+    std::cout << "Enter first number" << std::endl;
+    std::cin>> winningnumber3;
+        temp++;
+    }
+    
+    switch (winningnumber1)
+    {
+        case 1: onetwoten[0][0] =4;// code to be executed if n = 1;
+            break;
+        case 2: onetwoten[0][0] =5;// code to be executed if n = 2;
+            break;
+        case 3: onetwoten[0][0] =6;
+            break;
+        case 4: onetwoten[0][0] =7;// code to be executed if n = 1;
+            break;
+        case 5: onetwoten[0][0] =8;// code to be executed if n = 2;
+            break;
+        case 6: onetwoten[0][0] =9;
+            break;
+        case 7: onetwoten[0][0] =0;// code to be executed if n = 2;
+            break;
+        case 8: onetwoten[0][0] =1;
+            break;
+        case 9: onetwoten[0][0] =2;// code to be executed if n = 1;
+            break;
+        case 0: onetwoten[0][0] =3;// code to be executed if n = 2;
+            break;
+    }
+   
+    switch (winningnumber2)
+    {
+        case 1: onetwoten[1][1] =4;// code to be executed if n = 1;
+            break;
+        case 2: onetwoten[1][1] =5;// code to be executed if n = 2;
+            break;
+        case 3: onetwoten[1][1] =6;
+            break;
+        case 4: onetwoten[1][1] =7;// code to be executed if n = 1;
+            break;
+        case 5: onetwoten[1][1] =8;// code to be executed if n = 2;
+            break;
+        case 6: onetwoten[1][1] =9;
+            break;
+        case 7: onetwoten[1][1] =0;// code to be executed if n = 2;
+            break;
+        case 8: onetwoten[1][1] =1;
+            break;
+        case 9: onetwoten[1][1] =2;// code to be executed if n = 1;
+            break;
+        case 0: onetwoten[1][1] =3;// code to be executed if n = 2;
+            break;
+    }
+    
+    
+    switch (winningnumber3)
+    {
+        case 1: onetwoten[2][2] =4;// code to be executed if n = 1;
+            break;
+        case 2: onetwoten[2][2] =5;// code to be executed if n = 2;
+            break;
+        case 3: onetwoten[2][2] =6;
+            break;
+        case 4: onetwoten[2][2] =7;// code to be executed if n = 1;
+            break;
+        case 5: onetwoten[2][2] =8;// code to be executed if n = 2;
+            break;
+        case 6: onetwoten[2][2] =9;
+            break;
+        case 7: onetwoten[2][2] =0;// code to be executed if n = 2;
+            break;
+        case 8: onetwoten[2][2] =1;
+            break;
+        case 9: onetwoten[2][2] =2;// code to be executed if n = 1;
+            break;
+        case 0: onetwoten[2][2] =3;// code to be executed if n = 2;
+            break;
+    }
+    
+    while (reverse <=0)
+    {
+         onetwoten [1][2]= onetwoten [2][2] +1;
+        if (onetwoten [1][2] >=10)
+        {
+            onetwoten [1][2]= 0;
+        }
+       
+        onetwoten [0][2]= onetwoten [1][2] +1;
+        if (onetwoten [0][2] >=10)
+        {
+            onetwoten [0][2]= 0;
+        }
+        onetwoten [0][1]= onetwoten [0][2] +1;
+        if (onetwoten [0][1] >=10)
+        {
+            onetwoten [0][1]= 0;
+        }
+        onetwoten [1][0]= onetwoten [0][1] +1;
+        if (onetwoten [1][0] >=10)
+        {
+            onetwoten [1][0]= 0;
+        }
+        onetwoten [2][0]= onetwoten [1][0] +1;
+        if (onetwoten [2][0] >=10)
+        {
+            onetwoten [2][0]= 0;
+        }
+        onetwoten [2][1]= onetwoten [2][0] +1;
+        if (onetwoten [2][1] >=10)
+        {
+            onetwoten [2][1]= 0;
+        }
+        reverse++;
+    }
+    
+    std::cout<< onetwoten[0][0];std::cout<<"|"; std::cout<< onetwoten[0][1];std::cout<<"|"; std::cout<< onetwoten[0][2]; std::cout<<"|" <<std::endl;
+    std::cout<< onetwoten[1][0];std::cout<<"|"; std::cout<< onetwoten[1][1];std::cout<<"|"; std::cout<< onetwoten[1][2]; std::cout<<"|" <<std::endl;
+    std::cout<< onetwoten[2][0];std::cout<<"|"; std::cout<< onetwoten[2][1];std::cout<<"|"; std::cout<< onetwoten[2][2]; std::cout<<"|" <<std::endl << std::endl;
+    
+    
+    std::cout<<"Numbers to purchase for today are below    " <<std::endl << std::endl;
+    
+    // 5 numbers
+    std::cout << std::endl;
+    std::cout<< onetwoten[2][2];std::cout<< onetwoten[2][1];std::cout<< onetwoten[2][0] <<
+    std::endl;
+    std::cout<< onetwoten[1][2];std::cout<< onetwoten[1][1];std::cout<< onetwoten[1][0] <<
+    std::endl;
+    std::cout<< onetwoten[0][2];std::cout<< onetwoten[0][1];std::cout<< onetwoten[0][0] <<
+    std::endl;
+    std::cout<< onetwoten[0][0];std::cout<< onetwoten[1][0];std::cout<< onetwoten[2][0] <<
+    std::endl;
+    std::cout<< onetwoten[0][1];std::cout<< onetwoten[1][1];std::cout<< onetwoten[2][1] <<
+    std::endl << std:: endl;
+    
+    // 10 numbers
+    std::cout << std::endl;
+    std::cout<< onetwoten[0][2];std::cout<< onetwoten[1][2];std::cout<< onetwoten[2][2] <<
+    std::endl;
+    std::cout<< onetwoten[0][0];std::cout<< onetwoten[1][1];std::cout<< onetwoten[2][0] <<
+    std::endl;
+    std::cout<< onetwoten[0][2];std::cout<< onetwoten[1][1];std::cout<< onetwoten[2][2] <<
+    std::endl;
+    std::cout<< onetwoten[0][1];std::cout<< onetwoten[1][0];std::cout<< onetwoten[2][1] <<
+    std::endl;
+    std::cout<< onetwoten[0][1];std::cout<< onetwoten[1][2];std::cout<< onetwoten[2][1] <<
+    std::endl << std:: endl;
+    
+    // 15 numbers
+    std::cout << std::endl;
+    std::cout<< onetwoten[0][2];std::cout<< onetwoten[1][0];std::cout<< onetwoten[2][2] <<
+    std::endl;
+    std::cout<< onetwoten[0][0];std::cout<< onetwoten[1][2];std::cout<< onetwoten[2][0] <<
+    std::endl;
+    std::cout<< onetwoten[0][2];std::cout<< onetwoten[1][2];std::cout<< onetwoten[1][1] <<
+    std::endl;
+    std::cout<< onetwoten[0][0];std::cout<< onetwoten[1][0];std::cout<< onetwoten[1][1] <<
+    std::endl;
+    std::cout<< onetwoten[0][1];std::cout<< onetwoten[1][0];std::cout<< onetwoten[1][1] <<
+    std::endl << std:: endl;
+    
+    // 20 numbers
+    std::cout << std::endl;
+    std::cout<< onetwoten[0][1];std::cout<< onetwoten[1][2];std::cout<< onetwoten[1][1] <<
+    std::endl;
+    std::cout<< onetwoten[0][0];std::cout<< onetwoten[1][2];std::cout<< onetwoten[1][1] <<
+    std::endl;
+    std::cout<< onetwoten[0][0];std::cout<< onetwoten[0][2];std::cout<< onetwoten[2][0] <<
+    std::endl;
+    std::cout<< onetwoten[0][0];std::cout<< onetwoten[1][2];std::cout<< onetwoten[2][1] <<
+    std::endl;
+    std::cout<< onetwoten[0][2];std::cout<< onetwoten[0][0];std::cout<< onetwoten[2][2] <<
+    std::endl << std:: endl;
+    
+    
+    
+    return 0;
+}
+
